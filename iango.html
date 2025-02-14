@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Mon Cœur pour Toi ❤️</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            /* font-family: 'Brush Script MT', cursive; */
+        }
+
+        body {
+            background: #ffe6f2;
+            overflow-x: hidden;
+        }
+
+        .page {
+            /* min-height: 20vh; */
+            min-height: 100vh;
+            margin-top: 300px;
+            padding: 50px 20px;
+            padding: 0;
+            margin: 0;
+            display: none;
+            opacity: 0;
+            transition: 1s;
+            text-align: center;
+            align-items: center; /* Centrer verticalement */
+        justify-content: center; /* Centrer horizontalement */
+        }
+
+        .active-page {
+            display: flex;
+            opacity: 1;
+            /* margin-top: 300px; */
+        }
+
+        .welcome-page {
+            min-height: 10vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 300px;
+            background: #ffb6c1;
+        }
+
+        .heart-container {
+            position: relative;
+            width: 200px;
+            height: 180px;
+        }
+      
+/* 
+        .heart-container::before,
+        .heart-container::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            width: 100px;
+            height: 160px;
+            background: #ff3366;
+            border-radius: 50px 50px 0 0;
+        } */
+
+        .heart-container::before {
+            left: 100px;
+            transform: rotate(-45deg);
+            transform-origin: 0 100%;
+        }
+
+        .heart-container::after {
+            left: 0;
+            transform: rotate(45deg);
+            transform-origin: 100% 100%;
+        }
+
+        .heart-btn {
+            background: #ff3385;
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 30px;
+            font-size: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+            margin: 20px;
+            box-shadow: 0 4px 15px rgba(255, 51, 133, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .heart-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(255, 51, 133, 0.5);
+        }
+
+        .heart-btn::after {
+            content: '❤️';
+            position: absolute;
+            right: -20px;
+            transition: 0.3s;
+        }
+
+        .heart-btn:hover::after {
+            right: 15px;
+        }
+
+        .letter {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .letter::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-width: 0 10px 10px 10px;
+            border-style: solid;
+            border-color: transparent transparent white transparent;
+        }
+
+        h1 {
+            color: #ff3385;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            padding: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        .floating-hearts span {
+            position: absolute;
+            font-size: 20px;
+            animation: float 6s linear infinite;
+            opacity: 0;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="welcomePage" class="page active-page ">
+        <div class="heart-container">
+            <div class="heart-text">Tongasoa ❤️ Vonona ve?</div>
+        </div>
+        <button id="playMusic" class="heart-btn" onclick="showPage('page1')">Andao ary🥰 ➔</button>
+    </div>
+
+    <!-- Page 1 - Première lettre -->
+    <div id="page1" class="page">
+        <div class="floating-hearts" id="hearts-container"></div>
+        <div class="letter">
+            <h1>Ho an'ilay fitiavako, fiainako ,malalako tsy foiko ❤️</h1>
+            <p>Iangotiako,</p>
+            <p>Il y a six ans, nos premiers mots échangés tournaient autour d’un match entre la Juventus et le Barça. Qui aurait cru que cette conversation anodine marquerait le début d’une histoire d’amour aussi profonde et inébranlable ? À l’époque, on ne savait pas encore que nos cœurs allaient battre à l’unisson pendant toutes ces années, que ton sourire allait devenir mon soleil, et que ton amour deviendrait mon refuge. </p>
+            <p>Tu as été mon cœurdonier, celle qui a su panser mes blessures alors que je traversais des moments incertains. Mais tu étais bien plus qu’une amie, tu étais cette présence rassurante, ce rayon de lumière qui éclairait mes jours. À chaque récréation au lycée Saint Antoine, mon regard te cherchait, et lorsque je ne te trouvais pas, une étrange tristesse m’envahissait. C’était bien plus que de l’amitié… c’était déjà toi, celle que mon cœur avait choisie sans même que je m’en rende compte.</p>
+            <p>Te souviens-tu de cette photo pendant l’Andron’ny Mahamalagasy ? C’était mon premier cadeau de toi… un souvenir gravé à jamais. À l’époque, nous n’étions pas encore ensemble, et pourtant, je sentais déjà cette jalousie monter en moi quand je te voyais rire avec d’autres garçons. Mon cœur criait en silence ce que mes lèvres n’osaient pas encore prononcer : "Je t’aime."</p>
+            <p>Puis vint ce fameux 8 mars où je t’ai raccompagnée jusqu’à chez toi. J’ai encore des frissons en y repensant. Ce moment, ces pas partagés sous le ciel ensoleillé, ce silence qui en disait long… tout était parfait. Et que dire du jour où tu as chanté devant tout le monde lors de la fête du collège ? Ce jour-là, j’ai failli pleurer. Ta voix, ta présence, tout en toi me captivait.</p>
+            <p>Et puis, il y avait ces moments où nous portions nos maillots de la Juve, où l’on riait ensemble des "Dybaldo", où nos cœurs vibraient pour la même équipe… mais surtout l’un pour l’autre. J’étais vraiment amoureux.</p>
+            <p>Les années ont passé et la distance a voulu nous séparer… mais notre amour a tenu bon. Après mon bac, l’éloignement était difficile. Il y avait des jours où je sombrais dans la tristesse de ne pas pouvoir te voir. Certains murmuraient des doutes, mais notre confiance a été plus forte que les rumeurs.</p>
+            <p>Nous avons construit quelque chose d’unique… les déjeuners en famille, les concerts de Reko où l’on chantait à tue-tête, chaque restaurant visité, nos disputes passionnées, nos réconciliations pleines d’amour, les sorties de promotion, ce voyage à Ampefy… autant de souvenirs qui font de notre histoire une aventure merveilleuse.</p>
+            <p>Et puis, ces nuits où nous sortions ensemble... Aujourd’hui, je n’aime plus sortir sans toi. L’ambiance n’est plus la même, la ville me semble vide quand ta main n’est pas dans la mienne.</p>
+            <p>Ma chérie, je n’ai peut-être pas de cadeau matériel pour toi aujourd’hui, mais ce site et cette lettre sont mon cadeau, mon hommage, mon amour gravé dans chaque mot.</p>
+            <p>Il n’y avait que Manchester United qui faisait battre mon cœur avec autant de passion… jusqu’à ce que tu entres dans ma vie. Toi seule as réussi l'impossible : prendre la place de mon club de toujours.</p>
+            <p>Merci d’être celle qui fait battre mon cœur depuis six ans. Merci d’être mon amour, mon amie, mon âme sœur.
+
+                Je t’aime. ❤️</p>
+
+            <button  class="heart-btn" onclick="showPage('page2')">Notre Histoire ➔</button>
+        </div>
+    </div>
+
+    <!-- Page 2 - Notre histoire -->
+    <div id="page2" class="page">
+        <div class="floating-hearts" id="hearts-container"></div>
+        <div class="letter">
+            <h1> Notre Belle Histoire </h1>
+            <p>❤️ Tout a commencé un soir de match,...<br>
+            ❤️ Juventus-Barça, un simple échange...<br>
+            ❤️ Sans savoir que nos cœurs en secret...<br>
+            ❤️ Tissaient déjà leur doux projet...</p>
+
+            <p>❤️ Au lycée, ton absence pesait...<br> 
+            ❤️ Chaque récré, je te guettais...<br>
+             ❤️ Et quand je t'ai vue sur scène chanter...<br>
+              ❤️ Mon âme a failli chavirer...</p>
+
+              <p>❤️ Un 8 mars gravé dans ma mémoire...<br>
+                 ❤️ Te raccompagner, frissons d'espoir...<br>
+                 ❤️ Puis les maillots de la Juve portés...<br> 
+                 ❤️ Preuve que nos âmes étaient liées...</p> 
+            
+            <p>❤️ Malgré la distance et les rumeurs...<br>
+                ❤️ Notre amour a défié les heures...<br> 
+                ❤️ Aujourd’hui encore, c’est toi et moi...<br> 
+                ❤️ Mon plus beau rêve, mon plus grand choix... ❤️</p>
+
+            <button class="heart-btn" onclick="showPage('page3')">Nos Souvenirs ➔</button>
+        </div>
+    </div>
+
+    <!-- Page 3 - Galerie photo -->
+    <div id="page3" class="page">
+        <div class="floating-hearts" id="hearts-container"></div>
+        <div class="letter">
+            <h1>Notre Galerie d'Amour</h1>
+            <div class="gallery">
+                <!-- Remplace ces URLs par vos photos -->
+                <img src="1.jpg">
+                <img src="2.jpg">
+                <img src="3.jpg">
+                <img src="4.jpg">
+                <img src="5.jpg">
+                <img src="6.jpg">
+                <img src="7.jpg">
+                <img src="8.jpg">
+                <img src="9.jpg">
+                <img src="10.jpg">
+                <img src="11.jpg">
+            </div>
+            <button class="heart-btn" onclick="showPage('page1')">Retour au Début ➔</button>
+        </div>
+    </div>
+
+    <script>
+         document.getElementById('playMusic').addEventListener('click', function() {
+            const audio = new Audio('TSYTARAREKO.mp3');
+            audio.loop = true;
+            audio.play()
+                .then(() => console.log("Musique jouée avec succès"))
+                .catch(error => console.error("Erreur de lecture :", error));
+        });
+
+        function showPage(pageId) {
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active-page');
+            });
+            document.getElementById(pageId).classList.add('active-page');
+            createHearts(pageId);
+        }
+
+        // Création de cœurs flottants
+        function createHearts(pageId) {
+    const container = document.querySelector(`#${pageId} .floating-hearts`);
+    container.innerHTML = ''; // Nettoyer les anciens cœurs
+
+    for (let i = 0; i < 50; i++) {
+        const heart = document.createElement('span');
+        heart.innerHTML = '❤️';
+        heart.style.left = Math.random() * 100 + '%';
+        heart.style.animationDelay = Math.random() * 5 + 's';
+        container.appendChild(heart);
+    }
+}
+
+        // Musique romantique (décommente pour activer)
+        
+        window.onload = function() {
+            const audio = new Audio('TSYTARAREKO.mp3');
+            audio.loop = true;
+            audio.play();
+        }
+        
+
+        createHearts('page1');
+    </script>
+</body>
+</html>
