@@ -8,7 +8,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Brush Script MT', cursive;
+            /* font-family: 'Brush Script MT', cursive; */
         }
 
         body {
@@ -18,7 +18,9 @@
 
         .page {
             /* min-height: 20vh; */
-            /* padding: 50px 20px; */
+            min-height: 100vh;
+            margin-top: 300px;
+            padding: 50px 20px;
             padding: 0;
             margin: 0;
             display: none;
@@ -32,7 +34,7 @@
         .active-page {
             display: flex;
             opacity: 1;
-            
+            /* margin-top: 300px; */
         }
 
         .welcome-page {
@@ -182,19 +184,130 @@
     </style>
 </head>
 <body>
-    <div id="welcomePage" class="page active-page welcome-page">
+    <div id="welcomePage" class="page active-page ">
         <div class="heart-container">
-            <div class="heart-text">Bienvenue ❤️</div>
+            <div class="heart-text">Tongasoa ❤️ Vonona ve?</div>
         </div>
-        <a href="iango.html"><button id="playMusic" class="heart-btn">Entrer ➔</button></a>
+        <button id="playMusic" class="heart-btn" onclick="showPage('page1')">Andao ary🥰 ➔</button>
     </div>
-</body>
-<script>
-window.onload = function() {
-    const audio = new Audio('TSYTARAREKO.mp3');
-    audio.loop = true;
-    audio.play();
-}
-</script>
 
+    <!-- Page 1 - Première lettre -->
+    <div id="page1" class="page">
+        <div class="floating-hearts" id="hearts-container"></div>
+        <div class="letter">
+            <h1>Ho an'ilay fitiavako, fiainako ,malalako tsy foiko ❤️</h1>
+            <p>Iangotiako,</p>
+            <p>Il y a six ans, nos premiers mots échangés tournaient autour d’un match entre la Juventus et le Barça. Qui aurait cru que cette conversation anodine marquerait le début d’une histoire d’amour aussi profonde et inébranlable ? À l’époque, on ne savait pas encore que nos cœurs allaient battre à l’unisson pendant toutes ces années, que ton sourire allait devenir mon soleil, et que ton amour deviendrait mon refuge. </p>
+            <p>Tu as été mon cœurdonier, celle qui a su panser mes blessures alors que je traversais des moments incertains. Mais tu étais bien plus qu’une amie, tu étais cette présence rassurante, ce rayon de lumière qui éclairait mes jours. À chaque récréation au lycée Saint Antoine, mon regard te cherchait, et lorsque je ne te trouvais pas, une étrange tristesse m’envahissait. C’était bien plus que de l’amitié… c’était déjà toi, celle que mon cœur avait choisie sans même que je m’en rende compte.</p>
+            <p>Te souviens-tu de cette photo pendant l’Andron’ny Mahamalagasy ? C’était mon premier cadeau de toi… un souvenir gravé à jamais. À l’époque, nous n’étions pas encore ensemble, et pourtant, je sentais déjà cette jalousie monter en moi quand je te voyais rire avec d’autres garçons. Mon cœur criait en silence ce que mes lèvres n’osaient pas encore prononcer : "Je t’aime."</p>
+            <p>Puis vint ce fameux 8 mars où je t’ai raccompagnée jusqu’à chez toi. J’ai encore des frissons en y repensant. Ce moment, ces pas partagés sous le ciel ensoleillé, ce silence qui en disait long… tout était parfait. Et que dire du jour où tu as chanté devant tout le monde lors de la fête du collège ? Ce jour-là, j’ai failli pleurer. Ta voix, ta présence, tout en toi me captivait.</p>
+            <p>Et puis, il y avait ces moments où nous portions nos maillots de la Juve, où l’on riait ensemble des "Dybaldo", où nos cœurs vibraient pour la même équipe… mais surtout l’un pour l’autre. J’étais vraiment amoureux.</p>
+            <p>Les années ont passé et la distance a voulu nous séparer… mais notre amour a tenu bon. Après mon bac, l’éloignement était difficile. Il y avait des jours où je sombrais dans la tristesse de ne pas pouvoir te voir. Certains murmuraient des doutes, mais notre confiance a été plus forte que les rumeurs.</p>
+            <p>Nous avons construit quelque chose d’unique… les déjeuners en famille, les concerts de Reko où l’on chantait à tue-tête, chaque restaurant visité, nos disputes passionnées, nos réconciliations pleines d’amour, les sorties de promotion, ce voyage à Ampefy… autant de souvenirs qui font de notre histoire une aventure merveilleuse.</p>
+            <p>Et puis, ces nuits où nous sortions ensemble... Aujourd’hui, je n’aime plus sortir sans toi. L’ambiance n’est plus la même, la ville me semble vide quand ta main n’est pas dans la mienne.</p>
+            <p>Ma chérie, je n’ai peut-être pas de cadeau matériel pour toi aujourd’hui, mais ce site et cette lettre sont mon cadeau, mon hommage, mon amour gravé dans chaque mot.</p>
+            <p>Il n’y avait que Manchester United qui faisait battre mon cœur avec autant de passion… jusqu’à ce que tu entres dans ma vie. Toi seule as réussi l'impossible : prendre la place de mon club de toujours.</p>
+            <p>Merci d’être celle qui fait battre mon cœur depuis six ans. Merci d’être mon amour, mon amie, mon âme sœur.
+
+                Je t’aime. ❤️</p>
+
+            <button  class="heart-btn" onclick="showPage('page2')">Notre Histoire ➔</button>
+        </div>
+    </div>
+
+    <!-- Page 2 - Notre histoire -->
+    <div id="page2" class="page">
+        <div class="floating-hearts" id="hearts-container"></div>
+        <div class="letter">
+            <h1> Notre Belle Histoire </h1>
+            <p>❤️ Tout a commencé un soir de match,...<br>
+            ❤️ Juventus-Barça, un simple échange...<br>
+            ❤️ Sans savoir que nos cœurs en secret...<br>
+            ❤️ Tissaient déjà leur doux projet...</p>
+
+            <p>❤️ Au lycée, ton absence pesait...<br> 
+            ❤️ Chaque récré, je te guettais...<br>
+             ❤️ Et quand je t'ai vue sur scène chanter...<br>
+              ❤️ Mon âme a failli chavirer...</p>
+
+              <p>❤️ Un 8 mars gravé dans ma mémoire...<br>
+                 ❤️ Te raccompagner, frissons d'espoir...<br>
+                 ❤️ Puis les maillots de la Juve portés...<br> 
+                 ❤️ Preuve que nos âmes étaient liées...</p> 
+            
+            <p>❤️ Malgré la distance et les rumeurs...<br>
+                ❤️ Notre amour a défié les heures...<br> 
+                ❤️ Aujourd’hui encore, c’est toi et moi...<br> 
+                ❤️ Mon plus beau rêve, mon plus grand choix... ❤️</p>
+
+            <button class="heart-btn" onclick="showPage('page3')">Nos Souvenirs ➔</button>
+        </div>
+    </div>
+
+    <!-- Page 3 - Galerie photo -->
+    <div id="page3" class="page">
+        <div class="floating-hearts" id="hearts-container"></div>
+        <div class="letter">
+            <h1>Notre Galerie d'Amour</h1>
+            <div class="gallery">
+                <!-- Remplace ces URLs par vos photos -->
+                <img src="1.jpg">
+                <img src="2.jpg">
+                <img src="3.jpg">
+                <img src="4.jpg">
+                <img src="5.jpg">
+                <img src="6.jpg">
+                <img src="7.jpg">
+                <img src="8.jpg">
+                <img src="9.jpg">
+                <img src="10.jpg">
+                <img src="11.jpg">
+            </div>
+            <button class="heart-btn" onclick="showPage('page1')">Retour au Début ➔</button>
+        </div>
+    </div>
+
+    <script>
+         document.getElementById('playMusic').addEventListener('click', function() {
+            const audio = new Audio('TSYTARAREKO.mp3');
+            audio.loop = true;
+            audio.play()
+                .then(() => console.log("Musique jouée avec succès"))
+                .catch(error => console.error("Erreur de lecture :", error));
+        });
+
+        function showPage(pageId) {
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active-page');
+            });
+            document.getElementById(pageId).classList.add('active-page');
+            createHearts(pageId);
+        }
+
+        // Création de cœurs flottants
+        function createHearts(pageId) {
+    const container = document.querySelector(`#${pageId} .floating-hearts`);
+    container.innerHTML = ''; // Nettoyer les anciens cœurs
+
+    for (let i = 0; i < 50; i++) {
+        const heart = document.createElement('span');
+        heart.innerHTML = '❤️';
+        heart.style.left = Math.random() * 100 + '%';
+        heart.style.animationDelay = Math.random() * 5 + 's';
+        container.appendChild(heart);
+    }
+}
+
+        // Musique romantique (décommente pour activer)
+        
+        window.onload = function() {
+            const audio = new Audio('TSYTARAREKO.mp3');
+            audio.loop = true;
+            audio.play();
+        }
+        
+
+        createHearts('page1');
+    </script>
+</body>
 </html>
